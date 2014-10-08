@@ -1,6 +1,6 @@
 require 'webrick'
 require 'phase6/router'
-require 'phase6/controller_base'
+require 'phase2/controller_base'
 
 describe Phase6::Route do
   let(:req) { WEBrick::HTTPRequest.new(Logger: nil) }

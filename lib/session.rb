@@ -1,7 +1,7 @@
 require 'json'
 require 'webrick'
 
-module RailsLite
+module RailsOnSails
   class Session
     # find the cookie for this app
     # deserialize the cookie into a hash

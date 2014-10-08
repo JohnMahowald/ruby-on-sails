@@ -1,12 +1,6 @@
 require 'webrick'
-require_relative '../lib/phase6/controller_base'
+require_relative '../lib/phase2/controller_base'
 require_relative '../lib/phase6/router'
-
-
-# http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick.html
-# http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick/HTTPRequest.html
-# http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick/HTTPResponse.html
-# http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick/Cookie.html
 
 $cats = [
   { id: 1, name: "Curie" },
@@ -19,7 +13,7 @@ $statuses = [
   { id: 3, cat_id: 1, text: "Curie is cool!" }
 ]
 
-class StatusesController < Phase6::ControllerBase
+class StatusesController < ControllerBase
   def index
     statuses = $statuses.select do |s|
       s[:cat_id] == Integer(params[:cat_id])
@@ -29,7 +23,7 @@ class StatusesController < Phase6::ControllerBase
   end
 end
 
-class Cats2Controller < Phase6::ControllerBase
+class Cats2Controller < ControllerBase
   def index
     render_content($cats.to_s, "text/text")
   end
