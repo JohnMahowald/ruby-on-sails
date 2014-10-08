@@ -1,6 +1,6 @@
 require 'uri'
 
-module Phase5
+module RailsLite
   class Params
     # use your initialize to merge params from
     # 1. query string

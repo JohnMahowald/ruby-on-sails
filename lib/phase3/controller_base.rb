@@ -4,16 +4,16 @@ require 'erb'
 
 module Phase3
   class ControllerBase < Phase2::ControllerBase
-    # use ERB and binding to evaluate templates
-    # pass the rendered html to render_content
-    def render(template_name)
-      controller_name = self.class.name.underscore
-      file_path = "views/#{controller_name}/#{template_name}.html.erb"
-      
-      content = File.read(file_path)
-      template = ERB.new(content).result(binding)
-    
-      render_content(template, 'text/html')
-    end
+    # # use ERB and binding to evaluate templates
+    # # pass the rendered html to render_content
+    # def render(template_name)
+    #   controller_name = self.class.name.underscore
+    #   file_path = "views/#{controller_name}/#{template_name}.html.erb"
+    #
+    #   content = File.read(file_path)
+    #   template = ERB.new(content).result(binding)
+    #
+    #   render_content(template, 'text/html')
+    # end
   end
 end

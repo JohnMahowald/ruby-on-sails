@@ -1,4 +1,4 @@
-module Phase6
+module RailsLite
   class Route
     attr_reader :pattern, :http_method, :controller_class, :action_name
 

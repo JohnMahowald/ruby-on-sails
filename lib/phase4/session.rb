@@ -1,7 +1,7 @@
 require 'json'
 require 'webrick'
 
-module Phase4
+module RailsLite
   class Session
     # find the cookie for this app
     # deserialize the cookie into a hash
