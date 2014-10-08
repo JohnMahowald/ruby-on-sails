@@ -1,9 +1,9 @@
 require 'webrick'
-require 'phase3/controller_base'
+require 'controller_base'
 
-describe Phase3::ControllerBase do
+describe RailsOnSails::ControllerBase do
   before(:all) do
-    class CatsController < Phase3::ControllerBase
+    class CatsController < RailsOnSails::ControllerBase
       def index
         @cats = ["GIZMO"]
       end

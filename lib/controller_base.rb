@@ -1,4 +1,6 @@
+require 'active_support/core_ext'
 require_relative './session'
+require_relative './params'
 
 module RailsOnSails
   class ControllerBase
@@ -22,6 +24,7 @@ module RailsOnSails
       
       @res.status = 302
       @res['Location'] = url
+      session.store_session(@res)
       
       @already_built_response = true
     end
@@ -49,11 +52,6 @@ module RailsOnSails
       @already_built_response = true
     end
     
-    def redirect_to(url)
-      super(url)
-      session.store_session(@res)
-    end
-
     # method exposing a `Session` object
     def session
       @session ||= Session.new(@req)
