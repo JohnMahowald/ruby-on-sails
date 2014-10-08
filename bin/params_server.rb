@@ -1,11 +1,6 @@
 require 'active_support/core_ext'
 require 'webrick'
-require_relative '../lib/phase5/controller_base'
-
-# http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick.html
-# http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick/HTTPRequest.html
-# http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick/HTTPResponse.html
-# http://www.ruby-doc.org/stdlib-2.0/libdoc/webrick/rdoc/WEBrick/Cookie.html
+require_relative '../lib/controller_base'
 
 class Cat
   attr_reader :name, :owner
@@ -31,7 +26,7 @@ class Cat
   end
 end
 
-class CatsController < Phase5::ControllerBase
+class CatsController < RailsOnSails::ControllerBase
   def create
     @cat = Cat.new(params["cat"])
     if @cat.save

@@ -1,6 +1,6 @@
 require 'webrick'
-require_relative '../lib/phase2/controller_base'
-require_relative '../lib/phase6/router'
+require_relative '../lib/controller_base'
+require_relative '../lib/router'
 
 $cats = [
   { id: 1, name: "Curie" },
@@ -13,7 +13,7 @@ $statuses = [
   { id: 3, cat_id: 1, text: "Curie is cool!" }
 ]
 
-class StatusesController < ControllerBase
+class StatusesController < RailsOnSails::ControllerBase
   def index
     statuses = $statuses.select do |s|
       s[:cat_id] == Integer(params[:cat_id])
@@ -23,13 +23,13 @@ class StatusesController < ControllerBase
   end
 end
 
-class Cats2Controller < ControllerBase
+class Cats2Controller < RailsOnSails::ControllerBase
   def index
     render_content($cats.to_s, "text/text")
   end
 end
 
-router = Phase6::Router.new
+router = RailsOnSails::Router.new
 router.draw do
   get Regexp.new("^/cats$"), Cats2Controller, :index
   get Regexp.new("^/cats/(?<cat_id>\\d+)/statuses$"), StatusesController, :index
