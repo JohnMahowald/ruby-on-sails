@@ -2,7 +2,7 @@ require 'active_support/core_ext'
 require_relative './session'
 require_relative './params'
 
-module RailsOnSails
+module RubyOnSails
   class ControllerBase
     attr_reader :req, :res, :params
 

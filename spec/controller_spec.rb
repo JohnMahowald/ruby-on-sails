@@ -1,9 +1,9 @@
 require 'webrick'
 require 'controller_base'
 
-describe RailsOnSails::ControllerBase do
+describe RubyOnSails::ControllerBase do
   before(:all) do
-    class UsersController < RailsOnSails::ControllerBase
+    class UsersController < RubyOnSails::ControllerBase
       def index
       end
     end

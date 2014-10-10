@@ -7,7 +7,7 @@ describe "the symphony of things" do
   let(:res) { WEBrick::HTTPResponse.new(HTTPVersion: '1.0') }
 
   before(:all) do
-    class Ctrlr < RailsOnSails::ControllerBase
+    class Ctrlr < RubyOnSails::ControllerBase
       def route_render
         render_content("testing", "text/html")
       end
@@ -26,7 +26,7 @@ describe "the symphony of things" do
 
   describe "routes and params" do
     it "route instantiates controller and calls invoke action" do
-      route = RailsOnSails::Route.new(Regexp.new("^/statuses/(?<id>\\d+)$"), :get, Ctrlr, :route_render)
+      route = RubyOnSails::Route.new(Regexp.new("^/statuses/(?<id>\\d+)$"), :get, Ctrlr, :route_render)
       req.stub(:path) { "/statuses/1" }
       req.stub(:request_method) { :get }
       route.run(req, res)
@@ -34,7 +34,7 @@ describe "the symphony of things" do
     end
 
     it "route adds to params" do
-      route = RailsOnSails::Route.new(Regexp.new("^/statuses/(?<id>\\d+)$"), :get, Ctrlr, :route_does_params)
+      route = RubyOnSails::Route.new(Regexp.new("^/statuses/(?<id>\\d+)$"), :get, Ctrlr, :route_does_params)
       req.stub(:path) { "/statuses/1" }
       req.stub(:request_method) { :get }
       route.run(req, res)
@@ -46,7 +46,7 @@ describe "the symphony of things" do
     let(:ctrlr) { Ctrlr.new(req, res) }
 
     it "exposes a session via the session method" do
-      ctrlr.session.should be_instance_of(RailsOnSails::Session)
+      ctrlr.session.should be_instance_of(RubyOnSails::Session)
     end
 
     it "saves the session after rendering content" do

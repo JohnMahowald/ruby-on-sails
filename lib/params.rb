@@ -1,6 +1,6 @@
 require 'uri'
 
-module RailsOnSails
+module RubyOnSails
   class Params
     # use your initialize to merge params from
     # 1. query string

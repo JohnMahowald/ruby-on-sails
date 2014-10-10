@@ -1,9 +1,9 @@
 require 'webrick'
 require 'controller_base'
 
-describe RailsOnSails::ControllerBase do
+describe RubyOnSails::ControllerBase do
   before(:all) do
-    class CatsController < RailsOnSails::ControllerBase
+    class CatsController < RubyOnSails::ControllerBase
       def index
         @cats = ["GIZMO"]
       end

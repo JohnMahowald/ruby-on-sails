@@ -26,7 +26,7 @@ class Cat
   end
 end
 
-class CatsController < RailsOnSails::ControllerBase
+class CatsController < RubyOnSails::ControllerBase
   def create
     @cat = Cat.new(params["cat"])
     if @cat.save

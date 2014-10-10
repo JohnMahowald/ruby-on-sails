@@ -1,7 +1,7 @@
 require 'webrick'
 require_relative '../lib/controller_base'
 
-class MyController < RailsOnSails::ControllerBase
+class MyController < RubyOnSails::ControllerBase
   def go
     if @req.path == "/cats"
       render_content("hello cats!", "text/html")

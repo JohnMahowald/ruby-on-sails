@@ -13,7 +13,7 @@ $statuses = [
   { id: 3, cat_id: 1, text: "Curie is cool!" }
 ]
 
-class StatusesController < RailsOnSails::ControllerBase
+class StatusesController < RubyOnSails::ControllerBase
   def index
     statuses = $statuses.select do |s|
       s[:cat_id] == Integer(params[:cat_id])
@@ -23,13 +23,13 @@ class StatusesController < RailsOnSails::ControllerBase
   end
 end
 
-class Cats2Controller < RailsOnSails::ControllerBase
+class Cats2Controller < RubyOnSails::ControllerBase
   def index
     render_content($cats.to_s, "text/text")
   end
 end
 
-router = RailsOnSails::Router.new
+router = RubyOnSails::Router.new
 router.draw do
   get Regexp.new("^/cats$"), Cats2Controller, :index
   get Regexp.new("^/cats/(?<cat_id>\\d+)/statuses$"), StatusesController, :index
