@@ -1,5 +1,5 @@
 require 'webrick'
-require 'RubyOnSailsrouter'
+require 'router'
 require 'controller_base'
 
 describe RubyOnSails::Route do
