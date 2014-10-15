@@ -1,6 +1,8 @@
-# Rails On Sails
+# Ruby On Sails
 
 Rails on Sails is an exercise in meta programming where I learned how Rails handles web requests and serves responses. In this app I build a module, RailsOnSails, which clones the basic functionality of Rails' controller_base, router, session handler and params hash.
+
+This project was built in pair with [ActiveAssociation](http://github.com/JohnMahowald/active-association) where I build the basic functionality of Rails' Active Record. To view the project, check out the [repo here](http://github.com/JohnMahowald/active-association).
 
 ## Key Features:
 1. Router uses Ruby's define_method to create custom routes for each incoming HTTP request. When called, the router invokes the correlated controller action.
