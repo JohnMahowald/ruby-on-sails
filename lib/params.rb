@@ -2,10 +2,6 @@ require 'uri'
 
 module RubyOnSails
   class Params
-    # use your initialize to merge params from
-    # 1. query string
-    # 2. post body
-    # 3. route params
     def initialize(req, route_params = {})
       @params = route_params
       
